@@ -1,18 +1,7 @@
-import { useState, useEffect } from "react";
 import Counter from './Counter'
 
 //create your first component
-const Home = () => {
-	const [num, setNum] = useState(0);
-	useEffect(() => {
-		const intervalo = setInterval(() => {
-			setNum((prev) => prev+1);
-		}, 1000);
-		return () => clearInterval(intervalo);
-	}, []);
-
-
-
+const Home = ({ num }) => {
 	return (
 		<div className="text-center pt-3">
 			<span className="text-center bg-black text-white p-3">
@@ -29,6 +18,9 @@ const Home = () => {
 			<Counter numero={num} digitos={1} />
 		</div>
 	);
+
+
+
 };
 
 export default Home;
